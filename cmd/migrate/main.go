@@ -24,6 +24,7 @@ func run() error {
 		&storage.DedustSwap{},
 		&storage.DedustDeposit{},
 		&storage.DedustWithdrawal{},
+		&storage.StonfiSwap{},
 	); err != nil {
 		dbTx.Rollback()
 		return err

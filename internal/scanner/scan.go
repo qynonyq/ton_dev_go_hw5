@@ -72,7 +72,7 @@ func (s *Scanner) Listen(ctx context.Context) {
 	)
 	retries := 0
 	for err != nil {
-		logrus.Error("[SCN] failed to lookup master block %d: ", s.lastBlock.SeqNo, err)
+		logrus.Errorf("[SCN] failed to lookup master block %d: %s", s.lastBlock.SeqNo, err)
 		retries++
 		time.Sleep(2 * time.Second)
 		// find last block from mc after some tries
